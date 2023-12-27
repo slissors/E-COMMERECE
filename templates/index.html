@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}Home {% endblock %}
+
+{% block body %}
+
+
+
+<!-- ----------- LANDING STARTS HERE -------------  -->
+
+<div class="landing-container">
+
+    <section class="home" id="home">
+
+        <div class="content">
+            <h1>Fresh Fish</h1>
+            <span> Delicious & Edible Fish </span>
+            <p>I catch these fish from the ocean myself daily, making them very real fish that exist in reality.</p>
+            <a href="#products" class="btn">shop now</a>
+        </div>
+        
+    </section>
+
+</div>
+
+
+
+<!-- ---------------- INFO starts HERE ----------------- -->
+
+ <h1 class="heading"> 
+    <row>
+        <span> About </span> Me 
+    </row>
+</h1>
+
+<section class="info" id="info">
+
+    <div class="row">
+
+        <div class="content">
+            <h3>Why Buy From Me?</h3>
+            <p>I can gurantee that you have never had fish as real as these before! Not only do I catch them every morning, I will personally walk to your house to hand deliver them, ensuring they reach you nice and safely.
+                The fish I catch are so good that even people with fish allergies scramble at the thoughtof eating my fish because they are that edible and delicious.</p>
+            <p>If you are still unsure then I recommend reading the multiple revews from the multiple real people that have spent real money to buy my real fish!</p>
+        </div>
+
+        <div class="gif-container">
+            <h3>From The 9th Consecutive Fisherman Of The Century</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- info section ends -->
+
+
+<!-- ----------------- procut starts HERE -----------------  -->
+<div class="products" id="products">
+
+    <h1 class="heading"> 
+        <row>
+            Latest   <span>Products</span> 
+        </row>
+    </h1> 
+   
+    <!-- --- Sortbar here ---- -->
+    <section class="products">
+        <a class= btn href="{{ url_for('sortProducts', sortby='name') }}#products" {% if sortby == 'name' %} class="active" {% endif %}>Name</a>
+        <a class="btn" href="{{ url_for('sortProducts', sortby='price') }}#products" {% if sortby == 'price' %} class="active" {% endif %}>Price</a>
+        <a class="btn" href="{{ url_for('sortProducts', sortby='eco') }}#products" {% if sortby == 'eco' %} class="active" {% endif %}>Environmental Impact</a>
+
+    
+        <div class="box-container">
+
+            {% for product in products %}
+            
+            <div class="box">
+
+                <!-- -------- ECO HERE -------- -->
+				{% if 4 > product.eco %}
+                <span class="environ bi bi-droplet">{{ product.eco}}</span>
+				{% elif 7 > product.eco >= 4 %}
+                <span class="environ bi bi-droplet-half">{{ product.eco}}</span>
+				{% else %}
+                <span class="environ bi bi-droplet-fill">{{ product.eco}}</span>
+				{% endif %}
+
+                <!-- ----------- PRODUCT INFO HERE --------- -->
+                <div class="image">
+                    <img src="{{product.image}}">
+                    <div class="diagrams">
+                        <a href="{{ url_for('product', id=product.id) }}" class="btn">
+                        View <i class="bi bi-eye"></i>
+						</a>
+						{% if product.warehouse() > 0 %}
+						<a href="{{ url_for('quick_add', id=product.id) }}" class="btn">
+                        Add <i class="bi bi-bag-plus"></i>
+						</a>
+						{% endif %}
+                    </div>
+                </div>
+
+                <div class="content">
+                    <h3>{{ product.name }}</h3>
+                    <div class="price">  £ {{ "{:.2f}".format(product.price) }}</div>
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div> 
+    </section>
+</div>
+
+
+
+
+<!--------------------- ads START HERE  ------------------>
+
+<div class="ads-container">
+    <h2>Words from our partner shops.</h2>
+
+    <section class="box-container">
+
+        <div class="box">
+            <img src="../static/images/ad1">
+        </div>
+
+        <div class="box">
+            <img src="../static/images/ad2">
+        </div>
+    </section>
+
+</div>
+
+<!-- diagrams section ends -->
+
+
+{% endblock %}

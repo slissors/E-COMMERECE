@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %} 
+
+{% block title %}Edit Product{% endblock %}
+
+{% block body %}
+<h1 class="heading"> 
+    <row>
+        <span> Edit </span> {{ product.name }}
+    </row>
+</h1>
+
+<section class="checkout">
+	<div class="row">	
+		{{ wtf.quick_form(form) }}
+	</div>
+</section>
+
+{% endblock %}

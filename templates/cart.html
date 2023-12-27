@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}Your Cart{% endblock %}
+
+{% block body %}
+
+
+<h1 class="heading"> 
+	<row>
+		Cart   <span>Summary</span> 
+	</row>
+</h1> 
+
+		
+<section class="cart">
+	<div class="row">
+		<div class="table-container">
+			<table class="table">
+					<tr>
+						<th></th>
+						<th>Product</th>
+						<th>Price</th>
+						<th>Quantity</th>
+						<th>Total</th>
+						<th>Remove</th>
+					</tr>
+				<tbody>
+					{% for product in products %}
+						<tr>
+							<td>
+								<div class="table-product">
+									<img src="{{ product.image }}" alt="{{ product.name }}">
+								</div>
+							</td>
+							<td>{{ product.name }}</td>
+							<td>{{ "{:.2f}".format(product.price) }}</td>
+							<td>{{ product.quantity }}</td>
+							<td>{{ product.total }}</td>
+							<td>
+								<a href="{{ url_for('cartDelete', counter=product['counter']) }}" class="btn">
+									<i class="bi bi-x"></i>
+								</a>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+
+    <div class="row">
+        <div class="product content">
+            <h3>Cart Value</h3>
+			<div class="box-container">
+				<div class="box">
+					<p><span>Total Items: </span><strong class="pull-left"> {{ quantityTotal }}</strong>
+					<p><span>Total Price: </span><strong class="pull-right">£ {{ "{:.2f}".format(grandTotal) }}</strong></p>
+					</p>
+				</div>
+				</li>
+			</ul>
+			<div class="panel-footer">
+				{%if quantityTotal>0%}
+				<a href="{{ url_for('checkout') }}" class="btn btn-primary btn-sm">
+					Checkout <i class="bi bi-bag-check"></i>
+				</a>
+				{%else%}
+				<a href="#" class="btn">
+					Checkout <i class="bi bi-bag-x"></i>
+				</a>
+				{%endif%}
+				<a href="{{ url_for('index') }}#products" class="btn btn-link btn-sm pull-right">
+					Continue Shopping <i class="bi bi-bag-plus"></i> 
+				</a>
+			</div>
+        </div>
+    </div>
+
+</section>
+{% endblock %}

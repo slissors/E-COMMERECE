@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Empty Cart{% endblock %}
+
+{% block body %}
+
+<!-- home section starts  -->
+
+<div class="emptyCart-container">
+
+    <section class="emptyCart">
+
+        <div class="content">
+            <h3>Empty Cart</h3>
+            <span> No products in your cart. </span>
+            <p>Browse the fish I really do collect from really existing and real water sources!!</p>
+            <a href="{{ url_for('index')}}#products" class="btn">Explore</a>
+        </div>
+        
+    </section>
+
+</div>
+
+<!-- home section ends -->
+
+{% endblock %}

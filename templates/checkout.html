@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block body %}
+
+<h1 class="heading"> 
+	<row>
+		Check   <span>Out</span> 
+	</row>
+</h1> 
+
+<section class="checkout">
+	<div class="row">	
+	{{ wtf.quick_form(form) }}
+	</div>
+</section>
+
+<section class="info">
+	<div class="row">
+		<div class="product content">
+		<h3>Cart Value</h3>
+		<div class="box-cont">
+			<div class="box">
+				<p><span>Total Items: {{ quantityTotal }}</strong>
+				<p><span>Total Price: </span>£ {{ "{:.2f}".format(grandTotal) }}</p>
+				</p>
+			</div>
+		</div>
+	</div>
+
+	{%if quantityTotal>0%}
+	<form action="{{ url_for('checkout') }}" method="post" onsubmit="return validateForm()">
+		{{ form.csrf_token }}
+		<button type="submit" class="btn">
+			Checkout <i class="bi bi-bag-check"></i>
+		</button>
+	</form>
+	{%else%}
+	<a href="#" class="btn">
+		Checkout <i class="bi bi-bag-x"></i>
+	</a>
+	{%endif%}
+
+</section>
+{% endblock %}

@@ -1,0 +1,750 @@
+:root{
+    --battleshipy: #7F887Fff;
+    --dark: #2E3924ff;
+    --brick: #965C23ff;
+    --blue: rgb(161, 180, 214);
+    --creme: #F3ECDDff;
+    --greyGen: #525352;
+    --slate: #627787
+}
+
+/* Colour palette https://coolors.co/aad1f8-636363-4c4c4c-f5e2c8-627787 */
+
+
+
+
+
+*{
+    margin:0; padding:0;
+    box-sizing: border-box;
+    transition: .15s linear;
+    text-decoration: none;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    font-size: 64%;
+}
+
+section{
+    margin: 0 auto;
+    max-width: 1210px;
+    padding:2rem;
+}
+
+/* ------------- Heading HERE----------------- */
+
+.heading{
+    text-align: center;
+    border-radius: 15px;
+    font-size: 4rem;
+    color:#fff;
+    padding:1rem;
+    margin:6rem 3rem 1rem;
+    background:url(../images/cart.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.heading .row{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    flex:1 1 40rem;
+    gap:2.1rem;
+    padding:10rem 10rem 20rem ;
+}
+
+
+.heading span{
+    color:var(--battleshipy);
+}
+
+.btn{
+    margin-top: 1rem;
+    border-radius: 5rem;
+    padding:1rem 2.7rem;
+    cursor: pointer;
+    font-size: 2rem;
+    background:var(--dark);
+    color:#fff;
+}
+
+
+
+
+/* --------------- header starts here ----------- */
+
+header{
+    background-color: #fff;
+    position: sticky;
+    top:0; left:0; right:0;
+    z-index: 1000;
+    box-shadow: 0 .7rem 1rem rgba(0,0,0,.1);
+}
+
+
+header .logo{
+    font-size: 3.2rem;
+    color:var(--dark);
+    font-weight: bolder;
+}
+
+header .logo span{
+    color:var(--brick);
+}
+
+/* ----- navbar ------ */
+.navbar a{
+    font-size: 2rem;
+    padding:0 1.4rem;
+    color:#666;
+}
+
+
+header #toggler{
+    display: none;
+}
+
+header .bars{
+    font-size: 3rem;
+    color:var(--greyGen);
+    border-radius: .6rem;
+    padding:.6rem 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+.flex{
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+
+
+/* --------------- home starts  here ----------- */
+
+.landing-container{
+    background:url(../images/ocean-bg.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.home .content{
+    max-width: 50rem;
+}
+
+.home .content h1{
+    font-size: 6.2rem;
+    color:var(--battleshipy);
+}
+
+.home .content span{
+    font-size: 3.5rem;
+    color:var(--brick);
+    line-height: 1.6;
+    padding:1.2rem 0;
+}
+
+.home .content p{
+    font-size: 1.6rem;
+    color:var(--greyGen);
+    line-height: 1.8;
+    padding:1.2rem 0;
+}
+
+
+/* ---------- Info STARTS HERE ------------ */
+
+
+.info .row{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap:2.2rem;
+    padding:2.2rem 0;
+    padding-bottom: 3rem;
+}
+
+/* -- content -- */
+
+.info .row .content{
+    flex:1 1 40rem;
+}
+
+.info .row .content h3{
+    font-size: 3rem;
+    color: var(--battleshipy);
+    padding-bottom: .5rem;
+}
+
+.info .row .content p{
+    font-size: 1.5rem;
+    color:var(--greyGen);
+    line-height: 1.8;
+    padding:.5rem;
+}
+
+/* -- gif -- */
+
+.info .row .gif-container {
+    flex: 1 1 40rem;
+    position: relative;
+}
+
+.info .row .gif-container::before {
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 50%; 
+    border: 1.5rem solid #fff;
+    border-radius: .5rem;
+    box-shadow: 0 .7rem 1rem rgba(0,0,0,.2);
+    background-image: url(../images/sharks.gif);
+    background-size: cover;
+    background-position: center;
+}
+
+.info .row .gif-container h3 {
+    position: absolute;
+    top: 50%;
+    width: 103%;
+    transform: translateY(-50%);
+    font-size: 2.7rem;
+    padding: 1rem 2rem;
+    text-align: center;
+    background: #ece6e6;
+    display: inline-block;
+    mix-blend-mode: screen;
+}
+
+/* ---------- products START HERE ------------------ */
+
+.products .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    gap:1.6rem;
+}
+
+.products .box-container .box{
+    border-radius: .6rem;
+    position: relative;    
+    text-align: center;
+    flex:1 1 30rem;
+    box-shadow: 0 1rem 1.6rem rgba(0,0,0,.3);
+    border:.1rem solid rgba(0,0,0,.1);
+}
+
+
+.products .box-container .box .image{
+    overflow:hidden;
+    background:url(../images/back.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    text-align: center;
+    padding: 1.2rem;
+}
+
+
+.products .box-container .box .image img{
+    height:24rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.6);
+    
+}
+
+
+
+.products .box-container .box .environ{
+    position: absolute;
+    top:1rem; right:1rem;
+    padding:.7rem 1rem;
+    font-size: 2.7rem;
+    color:var(--slate);
+    z-index: 1;
+    border-radius: .5rem;
+}
+
+
+.products .btn{
+    display: inline-block;
+    margin-top: 1.5rem;
+    border-radius: 3rem;
+    background:var(--battleshipy);
+    padding:1rem 2.4rem;
+    cursor: pointer;
+    font-size: 1.8rem;
+}
+
+
+.products .box-container .box .content{
+    text-align: center;
+    padding:2rem;
+}
+
+.products .box-container .box .content h3{
+    color:var(--dark);
+    font-size: 2.7rem;
+}
+
+.products .content h3{
+    color:var(--dark);
+    font-size: 2.7rem;
+}
+
+.products .box-container .box .content .price{
+    padding-top: 1rem;
+    font-size: 2.5rem;
+    color:var(--brick);
+    font-weight: bolder;
+}
+
+
+
+
+
+/* -------------- ADS START HERE ------------- */
+.ads-container{
+    background:url(../images/cart.png);
+    background-size: cover;
+    background-position: center;
+    padding: 2rem 0;
+}
+
+.ads-container h2{
+    font-size: 2.7rem;
+    text-shadow: 0 0 1px black, 0 0 1px black;
+    color: var(--creme);
+    text-align: center;
+    padding: 0.8rem;
+}
+
+.ads-container .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    
+}
+
+.ads-container .box-container .box{
+    padding:2rem;
+    display: flex;
+    align-items: center;
+    flex:1.2 1.2 27rem;
+}
+
+.ads-container .box-container .box img{
+    height: 100%;
+    width: 100%;
+    border: 1.3rem solid rgba(0,0,0,.15);
+    box-shadow: 0 .7rem 1rem rgba(0,0,0,.7);
+    object-fit: cover;
+}
+
+
+
+
+
+/* -------------- cart STARTS HERE ------------ */
+
+
+.cart .row .content{
+    flex:1 1 40rem;
+}
+
+.cart .row .content h3{
+    font-size: 3rem;
+    color: var(--battleshipy);
+    padding-bottom: .5rem;
+}
+
+.cart .row .content p{
+    font-size: 1.5rem;
+    color:#999;
+    padding:.5rem 0;
+    padding-top: 1rem;
+    line-height: 1.8;
+}
+
+/* -- table -- */
+
+.cart .row .table-container{
+    flex:1 1 40rem;
+    position: relative;
+}
+
+.cart .row .table-container table{
+    width:100%;
+    border:1.5rem solid#fff;
+    border-radius: .5rem;
+    box-shadow: 0 .7rem 1rem rgba(0,0,0,.2);
+    height: 100%;
+    object-fit: cover;
+}
+
+.table {
+    width: 100%;
+    margin: 0 0 2rem;
+}
+
+.table th, .table td {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--slate);
+   
+}
+
+
+.table-product img {
+    max-width: 5rem;
+}
+
+.cart .btn{
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background:var(--battleshipy);
+    color:#fff;
+    padding:1rem 3rem;
+    cursor: pointer;
+    font-size: 1.8rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------empty cart starts--------------- */
+
+.emptyCart-container{
+    background:url(../images/seagulls.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+.emptyCart{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.emptyCart .content{
+    max-width: 50rem;
+}
+
+.emptyCart .content h3{
+    font-size: 6rem;
+    color:var(--dark);
+}
+
+.emptyCart .content span{
+    font-size: 3.5rem;
+    color:var(--brick);
+    padding:1rem 0;
+    line-height: 1.5;
+}
+
+.emptyCart .content p{
+    font-size: 1.5rem;
+    color:#666;
+    padding:1rem 0;
+    line-height: 1.8;
+}
+
+/* empty cart end */
+
+
+
+
+
+
+/* -------------------- THANK start HERE ----------------- */
+.thanks{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.thanks .content{
+    max-width: 50rem;
+}
+
+.thanks .content h1{
+    font-size: 8rem;
+    text-align: center;
+    color:var(--creme);
+}
+
+.thanks-container{
+    background:url(../images/lighthouse.gif);
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ----- CHECKOUT STARTS HERE ----- */
+
+.checkout .row {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  
+  .checkout .row form {
+    flex: 1 1 40em;
+    padding: 2rem 2.5rem;
+    width: 60rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .2);
+    border: .1rem solid rgba(0, 0, 0, .1);
+    background: #fff;
+    border-radius: .5rem;
+    font-size: 1.5rem;
+    color: var(--battleshipy);
+  }
+  
+  .checkout .row form .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .checkout .row form .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .checkout .row form .form-control {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--battleshipy);
+    background-color: #fff;
+    border: .1rem solid #ced4da;
+    border-radius: .5rem;
+  }
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------- hover ------------ */
+
+.navbar a:hover{
+    color:var(--blue);
+}
+
+header .diagrams a:hover{
+    color:var(--blue);
+}
+
+.btn:hover{
+    background:var(--brick);
+}
+
+
+.ads-container .box-container .box:hover img{
+    transform: scale(1.125);
+}
+
+
+
+.products .box-container .box:hover .image .diagrams{
+    bottom:0;
+}
+
+.products .box-container .box:hover .image img{
+    transform: scale(1.17);
+}
+
+.products .btn:hover{
+    background:var(--blue);
+}
+
+.products .box-container .box .image .diagrams a:hover{
+    background:var(--blue);
+    text-align: center;
+}
+
+
+
+.cart .btn:hover{
+    background:var(--blue);
+}
+
+
+
+
+
+
+
+
+
+
+/* -------- DIAGRAMS STYLING HERE ----------- */
+
+header .diagrams a{
+    margin-left: 1.5rem;
+    font-size: 2.5rem;
+    color:var(--greyGen);
+}
+
+.products .box-container .box .image .diagrams{
+    position: absolute;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.products .box-container .box .image .diagrams a{
+    height: 5rem;
+    line-height: 5rem;
+    
+    background:var(--battleshipy);
+    color:#fff;
+    position: relative;
+    width:100%;    
+    margin:3.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+
+
+
+/* --------------- media queries  HERE -------------------*/
+
+@media (max-width:350px){
+    
+    html{
+        font-size: 45%;
+    }
+
+    .heading{
+        font-size: 3rem;
+    }
+
+    .checkout .row form{
+        font-size: 3rem;
+    }
+
+}
+
+
+@media (max-width:769px){
+
+    main { 
+      padding-bottom: 4rem;
+    }
+
+    
+    header .bars{
+        display: block;
+    }
+
+    header .navbar{
+        position:absolute;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        top:100%; left:0; right:0;
+        background:#ded9d9;
+        border-top: .1rem solid rgba(0,0,0,.15);
+    }
+
+    header #toggler:checked ~ .navbar{
+        clip-path:polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header .navbar a{
+        margin:1.6em;
+        padding:1.6rem;
+        display: block;
+        background:#fff;
+        border:.1rem solid rgba(0,0,0,.1);
+    }
+  
+  
+    .home .content h3 {
+      font-size: 4.5rem;
+    }
+  
+    .home .content span {
+      font-size: 2rem;
+    }
+  
+    .diagrams-container .diagrams h3 {
+      font-size: 1.6rem;
+    }
+  
+    .diagrams-container .diagrams span {
+      font-size: 1.3rem;
+    }
+  
+    .checkout .row form {
+      width: 36rem;
+    }
+  }
+  
+
+@media (max-width:990px){
+    
+    html{
+        font-size: 54%;
+    }
+
+    .home{
+        background-position: left;
+    }
+
+}
+
+
+
+@media (max-width:1210px){
+    
+    html{
+        font-size: 60%;
+    }
+
+}
+

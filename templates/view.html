@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+<main>
+
+{% block title %} View Product {% endblock %}
+
+
+{% block body %}
+
+<h1 class="heading"> 
+	<row>
+		About   <span>{{ product.name }}</span> 
+	</row>
+</h1> 
+
+<section class="info products product-container">
+	<div class="row">
+		<div class="box-container">
+			<div class="box">
+				{% if 4 > product.eco %}
+                <span class="environ bi bi-droplet">{{ product.eco}}</span>
+				{% elif 7 > product.eco >= 4 %}
+                <span class="environ bi bi-droplet-half">{{ product.eco}}</span>
+				{% else %}
+                <span class="environ bi bi-droplet-fill">{{ product.eco}}</span>
+				{% endif %}
+				<div class="image">
+					<img src="{{product.image}}" alt="{{ product.name }}">
+				</div>
+
+				<div class="content">
+					<h3>{{ product.name }}</h3>
+					<div class="price"> £ {{ "{:.2f}".format(product.price) }} </div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="content">
+			<h3>Description</h3>
+			<p>{{ product.desc }}</p>
+			<p><span>Best Before: {{ product.bestBefore}}</span></p>
+
+			<form action="{{ url_for('add_to_cart') }}" method="POST">
+				{% if product.stock > 0 %}
+				<div class="row">	
+					<div class="row">
+						<p><span>Quantity</span></p>
+						<div class="product-form">
+							{{ form.csrf_token }}
+							{{ form.quantity(class='form-control', type='number', min=1, max=product.stock, step=1, value=1) }}
+							{{ form.id(value=product.id) }}
+						</div>	
+					</div>
+				</div>
+			{% endif %}
+
+			<div>
+				{% if product.stock > 0 %}
+				<button type="submit" class="btn btn-primary">
+					Add To Cart <i class="bi bi-bag-plus"></i>
+				</button>
+				{% endif %}
+			</div>
+			</form>
+	</div>
+</section>
+
+
+{% endblock %}
+
+</main>
