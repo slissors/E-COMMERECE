@@ -2,8 +2,8 @@ E-commerce Demo
 
 
 
-Import Data
-Included 
+Instance
+Includes sample database of fish for website in form of data.db
 
 Demonstation
 Here are screenshots of the e-commerce demo application when run.Included different screen sizes to demonstrate dynamic properties.
