@@ -8,23 +8,24 @@ Includes sample database of fish for website in form of data.db
 Demonstation
 Here are screenshots of the e-commerce demo application when run.Included different screen sizes to demonstrate dynamic properties.
 
-Home page
-Information section
-<img width="946" alt="Screenshot 2023-12-27 124014" src="https://github.com/slissors/E-COMMERCE/assets/93544397/2f896e8e-ed48-4134-821c-2412c88e0d50">
-<img width="960" alt="Screenshot 2023-12-27 124029" src="https://github.com/slissors/E-COMMERCE/assets/93544397/a04cf368-69db-4385-ab82-29652f48bfa1">
+Home page + Information section
+<img width="946" alt="Screenshot 2023-12-27 124014" src="https://github.com/slissors/E-COMMERECE/assets/93544397/ea37713a-e369-46cc-935a-513cd6ebef2f">
+<img width="960" alt="Screenshot 2023-12-27 124029" src="https://github.com/slissors/E-COMMERECE/assets/93544397/b53858fa-9526-49fd-9416-7eaf81518040">
+
 
 
 Product Display
 - Sorts product by eco-rating, price, name (alphabetical)
 - Mouse-hover, increases product size and let's user add to basket or view product
 - Dynamic
-<img width="958" alt="Screenshot 2023-12-27 124048" src="https://github.com/slissors/E-COMMERCE/assets/93544397/d9adc9b2-c6bc-4d11-8adb-f8e16d0a05ad">
-<img width="960" alt="image" src="https://github.com/slissors/E-COMMERCE/assets/93544397/d962da7d-bb1c-4798-a978-74bd62683eda">
+<img width="958" alt="Screenshot 2023-12-27 124048" src="https://github.com/slissors/E-COMMERECE/assets/93544397/d5868d19-222d-4a82-964a-c77c0e4494b3">
+<img width="425" alt="Screenshot 2023-12-27 141246" src="https://github.com/slissors/E-COMMERECE/assets/93544397/d88f6b3b-0bd3-4d8c-9fd3-33e1fef648ec">
+
 
 Item Detail Page
 - Choose quanitity of fish added to cart, up to maximum quantity.
 - View fish in more details
-<img width="960" alt="Screenshot 2023-12-27 130108" src="https://github.com/slissors/E-COMMERCE/assets/93544397/8664df96-d24a-43a6-979d-478965a0bf3b">
+<img width="960" alt="Screenshot 2023-12-27 130108" src="https://github.com/slissors/E-COMMERECE/assets/93544397/d2ee54f8-f9ae-4c70-a050-b633ae264889">
 
 
 Cart
